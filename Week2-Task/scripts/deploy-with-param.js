@@ -17,6 +17,12 @@ async function deployBookLibraryContract(_privateKey) {
 
   await run("print", { message: "Done!" });
   console.log(`BookLibrary deployed to ${bookLibrary.address}`);
+
+  if(hre.network.name !== 'localhost' && hre.network.name !== 'hardhat') {
+    await hre.run("verify:verify", {
+        address: bookLibrary.address
+    })
+  }
 }
 
 module.exports = deployBookLibraryContract;
