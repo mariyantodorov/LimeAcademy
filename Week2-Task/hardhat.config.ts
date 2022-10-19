@@ -1,5 +1,8 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "./tasks/deploy-testnets";
+import "./tasks/deploy-mainnet";
+import "./tasks/print.subtask";
 
 const config: HardhatUserConfig = {
   solidity: {
