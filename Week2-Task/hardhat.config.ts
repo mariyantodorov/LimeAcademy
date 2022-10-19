@@ -3,6 +3,7 @@ import "@nomicfoundation/hardhat-toolbox";
 import "./tasks/deploy-testnets";
 import "./tasks/deploy-mainnet";
 import "./tasks/print.subtask";
+import "./tasks/printInfo.subtask";
 
 const config: HardhatUserConfig = {
   solidity: {
