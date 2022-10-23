@@ -1,9 +1,16 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@nomiclabs/hardhat-etherscan";
+import dotenv from "dotenv";
 import "./tasks/deploy-testnets";
 import "./tasks/deploy-mainnet";
 import "./tasks/print.subtask";
 import "./tasks/printInfo.subtask";
+
+dotenv.config();
+const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
+const GOERLI_PRIVATE_KEY = process.env.GOERLI_PRIVATE_KEY as string;
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -12,14 +19,13 @@ const config: HardhatUserConfig = {
   },
   networks: {
     goerli: {
-      url: "https://goerli.infura.io/v3/199e48875a4f431e8ebaed6412865604",
-      accounts: [
-        "8b81e9caa6bf9213794c34c4a12b2fe85996a94bd4e0845659ba7325ddd3cdfc",
-      ],
+      url: GOERLI_RPC_URL,
+      accounts: [GOERLI_PRIVATE_KEY],
+      chainId: 5,
     },
   },
   etherscan: {
-    apiKey: "",
+    apiKey: ETHERSCAN_API_KEY,
   },
 };
 
