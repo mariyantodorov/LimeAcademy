@@ -11,8 +11,7 @@ const config: HardhatUserConfig = {
     goerli: {
       url: "https://goerli.infura.io/v3/199e48875a4f431e8ebaed6412865604",
       accounts: [
-        "0x47c99abed3324a2707c28affff1267e45918ec8c3f20b8aa892e8b065d2942dd",
-        "0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6",
+        "8b81e9caa6bf9213794c34c4a12b2fe85996a94bd4e0845659ba7325ddd3cdfc",
       ],
     },
   },
